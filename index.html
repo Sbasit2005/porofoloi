@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <script source="script.js">
+  // Some random colors
+  const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+  const numBalls = 50;
+  const balls = [];
+
+  for (let i = 0; i < numBalls; i++) {
+    let ball = document.createElement("div");
+    ball.classList.add("ball");
+    ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+    ball.style.left = `${Math.floor(Math.random() * 95)}vw`;
+    ball.style.top = `${Math.floor(Math.random() * 110)}vh`;
+    ball.style.transform = `scale(${Math.random()})`;
+    ball.style.width = `${Math.random()}em`;
+    ball.style.height = ball.style.width;
+
+    balls.push(ball);
+    document.body.append(ball);
+  }
+
+  // Keyframes
+  balls.forEach((el, i, ra) => {
+    let to = {
+      x: Math.random() * (i % 1 === 0 ? -10 : 10),
+      y: Math.random() * 10
+    };
+
+    let anim = el.animate(
+      [
+        { transform: "translate(0, 0)" },
+        { transform: `translate(${to.x}rem, ${to.y}rem)` }
+      ],
+      {
+        duration: (Math.random() + 1) * 2500, // random duration
+        direction: "alternate",
+        fill: "both",
+        iterations: Infinity,
+        easing: "ease-in-out"
+      }
+    );
+  });
+  </script>
+  <!-- Intro Header -->
+  <div class="container my-5">
+    <h1 class="display-1">Shaheer Basit</h1>
+
+    <a href="mailto:523sbasit@frhsd.com" type="button" class="btn btn-outline-primary">523sbasit@frhsd.com</a>
+  </div>
+
+  <!-- Navigation Bar-->
+  <div class="container">
+    <ul class="nav nav-pills">
+      <li class="nav-item ">
+        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active" aria-current="page" href="aboutme.html">About Me</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active" aria-current="page" href="contactme.html">Contact Me</a>
+      </li>
+    </ul>
+  </div>
+  <!-- Work Experience-->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h3 class="mb-3">Work Experience</h3>
+        <!-- Job#1 -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="mx-3">
+              <h4>MRHS</h4>
+              <div><strong>2019-Current</strong></div>
+              Web Design CTE Program
+            </div>
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item">Honors Web Design</li>
+              <li class="list-group-item">Advanced Web Design</li>
+              <li class="list-group-item">NJIT Web Design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--Skills-->
+      <div class="col">
+        <h3 class="mb-3">Skills</h3>
+        <!--Skills #1-->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="mx-3">
+              <h4>Web Design</h4>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Portfolio-->
+  <div class="container">
+    <h3>Lorem Ipsum</h3>
+    <div class="row">
+      <!--First Project-->
+      <div class="col-md-3 text-center">
+        <div class="card">
+          <img src="Capture.JPG" alt="Spooky Ghost" class="card-img-top">
+          <div class="card-body">
+            <h5>Spooky Ghost</h5>
+            <p>It's a spooky ghost</p>
+            <a href="https://sbasit2005.github.io/Ghost/index.html" class="btn btn-primary">
+              Spooky Ghost Website
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Second Project-->
+      <div class="col-md-3 text-center">
+        <div class="card">
+          <img src="Adolf.JPG" alt="Lorem Ipsum" class="card-img-top">
+          <div class="card-body">
+            <h5>Hero Project</h5>
+            <p>In this website I display how a hero tag works</p>
+            <a href="#" class="btn btn-primary">
+              Hero Website
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Third Project-->
+      <div class="col-md-3 text-center">
+        <div class="card">
+          <img src="Food.JPG" alt="Lorem Ipsum" class="card-img-top">
+          <div class="card-body">
+            <h5>Food Project</h5>
+            <p>I show my favourite foods in this site</p>
+            <a href="#" class="btn btn-primary">
+              Favourite Food Website
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Fourth Project-->
+      <div class="col-md-3 text-center">
+        <div class="card">
+          <img src="Rabbit.JPG" alt="Lorem Ipsum" class="card-img-top">
+          <div class="card-body">
+            <h5>Thankful Project</h5>
+            <p>In this site I show what I am thankful for</p>
+            <a href="#" class="btn btn-primary">
+              Thankful Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+  <footer class="mt-5 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; My Website</small>
+    </div>
+  </footer>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
